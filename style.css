@@ -1,0 +1,511 @@
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Paleta basada en el logo */
+:root {
+    --azul-oscuro: #0b2c5f;
+    --azul-medio: #0077b6;
+    --azul-claro: #00b4d8;
+    --gris-fondo: #f5f7fa;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Estilo base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-fondo);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Estilos generales de botones (para navegación y secciones) */
+main a, nav a {
+    display: inline-block;
+    background: var(--azul-medio);
+    color: #fff;
+    padding: 10px 25px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+main a:hover, nav a:hover {
+    background: var(--azul-claro);
+    transform: translateY(-3px);
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Barra superior de contacto */
+.contact-info {
+    background: white;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+}
+.contact-info .mini-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 20px; /* espacio entre logo y enlaces */
+    padding: 10px 0 0 0;
+}
+.contact-info .links {
+    margin-left: auto; /* empuja los enlaces a la derecha */
+    display: flex;
+    gap: 15px;         /* espacio entre cada enlace */
+}
+.contact-info a {
+    background: none;              /* sin fondo */
+    color: var(--azul-oscuro);     /* texto visible */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 100s ease;
+    margin-top: 0px;
+}
+.contact-info a:hover {
+    border-radius: 70px;
+}
+.logo-nombre h1 {
+  font-size: 1.6rem;             /* tamaño considerable */
+  font-weight: bold;             /* negrita */
+  color: var(--azul-oscuro);     /* tu azul corporativo */
+  margin: 0;
+  text-align: center;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Navegación */
+header {
+    background: var(--azul-oscuro);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;   /* centra verticalmente */
+    list-style: none;
+    margin: 0;
+    padding: 0;            /* quitamos padding extra */
+    height: 50px;          /* altura uniforme de la barra */
+    gap: 60px;
+}
+nav ul li a{
+    background: none;          /* elimina el fondo */
+    color: #fff;               /* texto blanco sobre barra azul */
+    padding: 0;                /* quita el padding extra */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    line-height: 0px;         /* centra verticalmente */
+}
+nav ul li a:hover {
+    color: var(--azul-claro);
+}
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+#nosotros img {
+    width: 100%;       /* ocupa todo el ancho */
+    height: auto;      /* mantiene proporción */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Logo */
+.logo img {
+    display: block;
+    margin: 30px auto;
+    width: 180px;
+    transition: transform 0.4s ease;
+}
+.logo img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Secciones */
+section {
+    padding: 50px 20px;
+    max-width: 100%;
+    margin: auto;
+    animation: slideUp 1s ease;
+}
+section h1, section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--azul-oscuro);
+}
+section p {
+    text-align: center;
+}
+.separador {
+  width: 100%;
+  margin: 0 auto;            /* centrado y con aire arriba/abajo */
+  border: none;
+  border-top: 3px solid var(--azul-oscuro); /* grosor y color */
+  border-radius: 2px;
+  opacity: 0;                  /* invisible al inicio */
+  animation: fadeIn 1s ease forwards; /* misma animación*/
+}
+  
+/* Nosotros */
+.nosotros h1 {
+  text-align: center;   /* título centrado arriba */
+  margin-bottom: 30px;
+  color: var(--azul-oscuro);
+}
+.nosotros .contenido {
+  display: flex;
+  justify-content: center;   /* centra el bloque completo */
+  align-items: center;   /* alinea centro */
+  width: 80%;                /* ocupa el 80% del ancho de la pantalla */
+  margin: 0 auto;            /* centra horizontalmente */
+  gap: 5%;                   /* espacio relativo entre columnas */
+}
+.nosotros .texto {
+  flex: 1; 
+  padding: 0 2%; 
+}
+.nosotros .texto p {
+  text-align: justify;        /* párrafos justificados */
+  margin-bottom: 15px;
+}
+.nosotros .imagen {
+  flex: 1;                    /* lado derecho */
+}
+.nosotros .imagen img {
+  width: 100%;                /* ocupa todo el ancho disponible */
+  max-width: 500px;           /* límite para que no se desborde */
+  height: auto;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Servicios y productos */
+.servicios .contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  gap: 5%;   /* espacio relativo */
+}
+.titulo-servicios{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.servicios .texto{
+  flex: 1;                   /* cada columna ocupa la mitad */
+  padding: 0 2%;
+  justify-content: center;   /* centra el contenido dentro de cada columna */
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+.servicios .imagen{
+  flex: 1;
+  display: flex;
+  justify-content: center;   /* centra horizontalmente */
+  align-items: center;       /* centra verticalmente */
+} 
+.servicios .texto {
+  padding: clamp(10px, 2vw, 40px);
+}
+.servicios .texto h1 {
+  text-align: center;         /* título centrado arriba */
+  margin-bottom: 20px;
+  color: var(--azul-oscuro);
+}
+.servicios .texto ul {
+  text-align: left;        /* lista justificada */
+  list-style: none;           /* opcional: quitar viñetas */
+  padding: 0;
+  margin: 0 auto;
+}
+.servicios .texto li {
+  margin-bottom: 10px;
+}
+.servicios a {
+  display: block;
+  text-align: center;   /* centra horizontalmente */
+  margin-top: 30px;     /* espacio respecto a las columnas */
+  font-weight: bold;
+  color: white;
+  background-color: var(--azul-oscuro);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  width: 10%;
+ }
+.servicios {
+  padding: 0;        /* elimina todo el padding */
+  margin: 0;         /* opcional: también quita márgenes */
+}
+.servicios .texto p {
+  text-align: justify;        /* párrafos justificados */
+  margin-bottom: 15px;
+}
+.servicios .imagen img,
+.productos img {
+  width: 100%;
+  max-width: 400px;   /* todas iguales */
+  height: auto;
+  object-fit: cover;  /* mantiene proporción */
+  border-radius: 10px;
+}
+
+/*Productos*/
+.productos {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.productos td {
+  vertical-align: middle;
+  text-align: center;        /* centra elementos como imágenes o botones */
+  padding: 20px;
+  
+}
+.productos td p,
+.productos td ul,
+.productos td li {
+  text-align: justify;       /* justifica los textos dentro de la celda */
+  margin: 0 auto;            /* mantiene equilibrio horizontal */
+  max-width: 90%;            /* evita que se peguen demasiado a los lados */
+}
+.productos td img {
+  display: block;          /* se comporta como bloque */
+  margin: 0 auto;          /* se centra horizontalmente */
+  max-width: 90%;         /* nunca se desborda de la celda */
+  height: auto;            /* mantiene proporción */
+}
+#productos{
+    padding-top: 30px;
+    background-color: white;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+hr.hr-mini {
+  all: unset;                  /* borra estilos heredados */
+  display: block;
+  width: 80%;                  /* mismo ancho que las columnas */
+  margin: 40px auto;           /* aire arriba/abajo y centrado */
+  border-top: 0.25px solid var(--azul-oscuro); /* línea ultra delgada */
+  opacity: 0.5;                /* discreta */
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+.subtitulo {
+  text-align: center !important;
+  font-weight: bold;   /* opcional para destacarlo */
+  margin-bottom: 0px !important;
+}
+div.texto {
+  margin-bottom: 10px !important;  /* reduce el aire debajo del texto */
+  padding-bottom: 0 !important;    /* elimina espacio interno extra */
+}
+div.boton-centro {
+  margin-top: 5px !important;   /* menos aire arriba */
+  margin-bottom: 20px;          /* aire controlado abajo */
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Botones */
+a {
+    display: inline-block;
+    background: var(--azul-medio);
+    color: #fff;
+    padding: 10px 25px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+a:hover {
+    background: var(--azul-claro);
+    /* transform: translateY(-3px); */
+}
+.boton-centro a {
+  display: inline-block;
+  margin: 0px auto;
+  padding: 12px 0px;
+  background-color: var(--azul-oscuro);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 15%;
+}
+.boton-centro{
+    text-align: center;
+    margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--azul-oscuro);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--azul-oscuro);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.btn-top:hover{
+    opacity: 1;
+}
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/*Marcas*/
+#marcas img {
+    width: 50%;   /* ajusta el tamaño a lo que quieras */
+    height: auto;   /* mantiene la proporción */
+    display: block;
+    margin: 20px auto; /* la centra horizontalmente */
+    transition: transform 0.3s ease;
+}
+#marcas img:hover {
+    transform: scale(1.1); /* efecto al pasar el mouse */
+}
+#marcas{
+    text-align: center;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+hr{
+    background-color: #0b2c5f;
+    padding: 1%;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/*Contacto*/
+#contacto{
+    text-align: center;
+    font-size: 120%;
+    background-color: white;
+}
+#contacto table{
+    text-align: justify;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Footer */
+footer {
+    background: var(--azul-oscuro);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+/*Animación de Scroll*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* ————————————————————————————————————————————————————————————————— */
+
+/* Estilos móviles */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* debajo del header */
+    right: 0;
+    background: var(--azul-oscuro);
+    width: 200px;
+    display: none; /* oculto por defecto */
+    padding: 20px;
+  }
+  nav ul.show {
+    display: flex; /* se muestra al activar */
+  }
+  .hamburger {
+    display: block; /* aparece solo en móviles */
+  }
+  .contact-info {
+    flex-direction: column;   /* logo, nombre y links uno debajo del otro */
+    text-align: center;
+    gap: 10px;
+  }
+  .contact-info .links {
+    flex-direction: column;   /* teléfono y correo apilados */
+    text-align: center;
+  }
+  .logo-nombre h1 {
+    font-size: 1.2rem;        /* más pequeño en celular */
+  }
+  .nosotros .contenido {
+    flex-direction: column;  /* texto arriba, imagen abajo */
+    width: 95%;              /* más ancho en móvil */
+    gap: 20px;
+  }
+  .nosotros .imagen, .nosotros .texto {
+    flex: none;              /* cada uno ocupa todo el ancho */
+    text-align: center;
+  }
+}
