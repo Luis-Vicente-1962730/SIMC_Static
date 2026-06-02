@@ -11,10 +11,10 @@
 
 /* Paleta basada en el logo */
 :root {
-    --azul-oscuro: #0b2c5f;
-    --azul-medio: #0077b6;
-    --azul-claro: #00b4d8;
-    --gris-fondo: #f5f7fa;
+    --azul-oscuro: rgb(11, 44, 95);
+    --azul-medio: rgb(0, 119, 182);
+    --azul-claro: rgb(0, 180, 216);
+    --gris-fondo: rgb(245, 247, 250);
 }
 
 /* ————————————————————————————————————————————————————————————————— */
@@ -51,7 +51,7 @@ main a:hover, nav a:hover {
 .hero .contact-info {
     background: none;
     width: 100%;
-    padding: 15px 30px;
+    padding: 0px 30px 15px 30px;
     display: grid;
     grid-template-columns: auto 1fr auto; /* logo | menú | contacto */
     align-items: center;
@@ -69,7 +69,7 @@ main a:hover, nav a:hover {
 }
 
 .hero .contact-info nav ul li a {
-    color: var(--azul-oscuro);
+    color: var(--gris-fondo);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -80,7 +80,7 @@ main a:hover, nav a:hover {
 }
 
 .hero .contact-info .mini-logo {
-    width: 55%;
+    width: 200px;
     height: auto;
 }
 .hero .contact-info .links {
@@ -98,7 +98,7 @@ main a:hover, nav a:hover {
 }
 .hero .contact-info .links a {
     font-size: 1.1rem; /* aumenta tamaño de teléfono y correo */
-    color: var(--azul-oscuro);
+    color: #fff;
     font-weight: 600;
     text-decoration: none;
 }
@@ -126,10 +126,10 @@ main a:hover, nav a:hover {
   width: 100%; height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.9) 0%,     /* negro fuerte al inicio */
-    rgba(0,0,0,0.9) 40%,    /* sigue oscuro hasta casi la mitad */
-    rgba(0,0,0,0.7) 70%,    /* empieza a aclarar */
-    rgba(255,255,255,0.3) 100% /* transparente al final */
+    rgb(7, 27, 56,1) 0%,     /* negro fuerte al inicio */
+    rgba(7, 27, 56,0.8) 40%,    /* sigue oscuro hasta casi la mitad */
+    rgba(7, 27, 56,0.7) 70%,    /* empieza a aclarar */
+    rgba(7, 27, 56,0.3) 100% /* transparente al final */
   );
   z-index: 1;
 }
@@ -140,7 +140,7 @@ main a:hover, nav a:hover {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 20px 40px;
+  padding: 0px 0px;
 }
 
 .hero-content {
@@ -150,7 +150,7 @@ main a:hover, nav a:hover {
   flex-direction: column;   /* apila en columna */
   align-items: center;      /* centra horizontalmente */
   text-align: center;
-  margin-top: 20px;        /* espacio debajo del header */
+  margin-top: 30px;        /* espacio debajo del header */
   gap: 20px;                /* separación entre elementos */
 }
 
@@ -163,6 +163,7 @@ main a:hover, nav a:hover {
 .hero-content p {
   font-size: 1.2rem;
   max-width: 800px;         /* limita ancho para que no se vea de lado */
+  text-align: justify;
 }
 .hero-content img {
   max-width: 500px;
@@ -180,6 +181,7 @@ main a:hover, nav a:hover {
   font-size: 1.2rem;
 }
 .header-content nav ul li a {
+  display: flex;
   color: #fff; /* blanco sobre overlay */
   font-weight: 600;
   text-decoration: none;
@@ -426,7 +428,7 @@ section p {
   width: 90%;
 }
 .productos-grid img {
-  width: 100%;
+  width: 70%;
   border-radius: 8px;
 }
 
