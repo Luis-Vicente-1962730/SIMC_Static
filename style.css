@@ -255,6 +255,18 @@ nav ul li:hover::after {
     transform: scale(1.1) rotate(2deg);
 }
 
+a .lg-ig{
+  width: 30px !important;
+}
+a .lg-fb{
+  width: 30px !important;
+}
+#insta{
+  padding: 10px 20px !important;
+}
+#face{
+  padding: 10px 20px !important;
+}
 /* ————————————————————————————————————————————————————————————————— */
 
 /* Secciones */
