@@ -21,7 +21,7 @@
 
 /* Estilo base */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--gris-fondo);
     color: #333;
     line-height: 1.6;
@@ -47,79 +47,100 @@ main a:hover, nav a:hover {
 
 /* ————————————————————————————————————————————————————————————————— */
 
-/* Barra superior de contacto */
-.hero .contact-info {
-    background: none;
-    width: 100%;
-    padding: 0px 30px 15px 30px;
-    display: grid;
-    grid-template-columns: auto 1fr auto; /* logo | menú | contacto */
-    align-items: center;
-    gap: 30px;
+.header-info{
+  background-color: var(--azul-medio);
+  padding: 0px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  color: #f5f7fa;
+  align-items: center;
 }
 
-.hero .contact-info nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1.1rem;
+.tel-icon{
+  margin: 0px;
+  font-size: 15px;
+  font-weight: 550;
+  padding: 15px;
 }
 
-.hero .contact-info nav ul li a {
-    color: var(--gris-fondo);
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.tel-icon:hover{
+  background-color: var(--azul-medio);
+  text-decoration: underline;
 }
 
-.hero .contact-info nav ul li a:hover {
-    color: var(--azul-claro);
+.phone-icon{
+  padding-left: 15px;
 }
 
-.hero .contact-info .mini-logo {
-    width: 200px;
-    height: auto;
-}
-.hero .contact-info .links {
-    margin-left: auto; /* empuja los enlaces a la derecha */
-    display: flex;
-    gap: 15px;         /* espacio entre cada enlace */
-}
-.hero .contact-info a {
-    background: none;              /* sin fondo */
-    color: var(--azul-oscuro);     /* texto visible */
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 100s ease;
-    margin-top: 0px;
-}
-.hero .contact-info .links a {
-    font-size: 1.1rem; /* aumenta tamaño de teléfono y correo */
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-.hero .contact-info a:hover {
-    border-radius: 70px;
-}
-.hero .logo-nombre h1 {
-  font-size: 2rem;             /* tamaño considerable */
-  font-weight: bold;             /* negrita */
-  color: var(--azul-oscuro);     /* tu azul corporativo */
-  margin: 0;
+/* .phone-container{
+  flex: 1;
+} */
+
+.header-message{
   text-align: center;
+  color: #f5f7fa;
+  font-weight: 350;
+  flex: 1;
+}
+
+.social-container{
+  justify-self: end;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#message-slider{
+  transition: opacity .4s ease;
+}
+
+.insta{
+  margin: 0px;
+  font-size: 30px;
+  padding: 0px 13px;
+}
+
+.face{
+  margin: 0px;
+  font-size: 26px;
+  padding: 3px 13px;
 }
 
 /* ————————————————————————————————————————————————————————————————— */
+
+.header-content {
+  position: relative; 
+  z-index: 2;  /* encima del overlay */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
 .hero {
   position: relative;
-  background: url('imgs/nyno8noz.png') no-repeat center center/cover;
+  background-image: url("imgs/hero-img.png"); 
+  background-size: 100%;
+  background-repeat: no-repeat ;
   height: 100vh; /* ocupa toda la pantalla */
   color: white;
+  padding: 20px 35px 0px 30px;
 }
+
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a{
+  margin-top: 0px;
+}
+
 .hero .overlay {
   position: absolute;
   top: 0; left: 0;
@@ -134,23 +155,16 @@ main a:hover, nav a:hover {
   z-index: 1;
 }
 
-.header-content {
-  position: relative;
-  z-index: 2; /* encima del overlay */
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  padding: 0px 0px;
-}
-
 .hero-content {
+  width: 45%;
+  margin-left: 5%;
   position: relative;
   z-index: 2;
   display: flex;            /* activa flexbox */
   flex-direction: column;   /* apila en columna */
-  align-items: center;      /* centra horizontalmente */
-  text-align: center;
-  margin-top: 30px;        /* espacio debajo del header */
+  align-items: left;      /* centra horizontalmente */
+  text-align: left;
+  margin-top: 4%;        /* espacio debajo del header */
   gap: 20px;                /* separación entre elementos */
 }
 
@@ -192,12 +206,6 @@ main a:hover, nav a:hover {
   font-weight: 600;
   text-decoration: none;
 }
-/* .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  margin-top: 150px;
-} */
 
 /* ————————————————————————————————————————————————————————————————— */
 
@@ -231,43 +239,6 @@ nav ul li a:hover {
 nav ul li:hover::after {
     width: 100%;
 }
-
-/* ————————————————————————————————————————————————————————————————— */
-
-#nosotros img {
-    width: 100%;       /* ocupa todo el ancho */
-    height: auto;      /* mantiene proporción */
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* Logo */
-.logo img {
-    display: block;
-    margin: 30px auto;
-    width: 180px;
-    transition: transform 0.4s ease;
-}
-.logo img:hover {
-    transform: scale(1.1) rotate(2deg);
-}
-
-a .lg-ig{
-  width: 30px !important;
-}
-a .lg-fb{
-  width: 30px !important;
-}
-#insta{
-  padding: 10px 20px !important;
-}
-#face{
-  padding: 10px 20px !important;
-}
-/* ————————————————————————————————————————————————————————————————— */
 
 /* Secciones */
 section {
@@ -516,18 +487,29 @@ a:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--azul-oscuro);
+
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--azul-medio);
     color: #fff;
+    
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     padding: 10px 20px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 .btn-top:hover{
-    opacity: 1;
+    opacity: 1;opacity: 1;
+    transform: translateY(-3px);
+    color: var(--azul-oscuro);
+    transition: opacity .3s ease, transform .3s ease;
 }
 /* Botón hamburguesa */
 .hamburger {
@@ -543,14 +525,14 @@ a:hover {
 
 /*Marcas*/
 #marcas img {
-    width: 50%;   /* ajusta el tamaño a lo que quieras */
+    width: 65%;   /* ajusta el tamaño a lo que quieras */
     height: auto;   /* mantiene la proporción */
     display: block;
     margin: 20px auto; /* la centra horizontalmente */
     transition: transform 0.3s ease;
 }
 #marcas img:hover {
-    transform: scale(1.1); /* efecto al pasar el mouse */
+    transform: scale(1.05); /* efecto al pasar el mouse */
 }
 #marcas{
     text-align: center;
@@ -598,14 +580,14 @@ footer {
 /* ————————————————————————————————————————————————————————————————— */
 
 /* Animaciones */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-@keyframes slideUp {
+} */
+/* @keyframes slideUp {
     from { transform: translateY(40px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-}
+} */
 /*Animación de Scroll*/
 html {
   scroll-behavior: smooth;
